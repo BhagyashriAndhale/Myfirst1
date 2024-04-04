@@ -1,0 +1,1542 @@
+@Configuration
+- class level annotation
+- streotype annotaion
+- used to indicate that class use to create bean using @bean annotaion on the method level
+
+@Component
+- parent of configuration
+- classlevel annotaion
+- scan our application for classes which annoteted with @component
+- this annotaion indicate that an annoteted class is a component
+- this annotation tell to sprig container that automatically create a bean for strotype annotaion classes
+
+@Bean
+- it annotain can only use which class has configuration annotaion
+- method level annotaion this method work as bean
+- which return that bean which is maneged by spring container
+
+@Scope
+- it is used to define the scope of bean
+- mehod level annotaion
+- where we use bean annotion
+
+@Autowired 
+- it is used to inject bean automatically
+- it can use constructor base injection ,field,setter
+- variable level annotaion
+
+@Quilifer
+- it is use to avoid the confusion when to beans have same type
+- when u go for byname it is most efficient way to change the name of bean
+- we have to provide variable name or bean name same
+
+@Controller
+- controller it is use to create bean as controller layer
+- it is use to handle upcoming http requests 
+- it is use to define as spring mvc controller
+- we use mostly this annotation with requestmappings methods
+
+@Service
+- it is use create bean automatically in applicationcontext (ioc container)
+-it is use to define that class is service layer
+- business logic / sequrity logic
+
+
+@Repositry
+- it use to ceate bean for spring objects at dao layer
+
+@RequestMapping
+- use to handle the request
+- method level
+- map our request with the method
+- comes 3.0 v
+- depricated from 4.0 v
+
+@RequestParam
+- method parameter level annotation
+- use to get query parameter data from url to backend
+
+@ModelAtrribute
+- method parameter level
+- use to take object form data from ui to backend
+- for custom object
+
+@Entity
+- it is classlevel annotaion
+- javax persistence annotaion
+- it is use to map our class with the database table
+
+@Id
+- it is javax persistence annotaion
+- variable level annotaion
+- used to define this column as primary key
+
+@GeneratedValue
+- it is variable level annotaion
+- used to apply auto_increment constraint
+
+@Lob
+- variable level annotaion
+- used to take file form data from transient layer to persistence layer
+- thats why we have to provide datatype as a byte array
+
+@Table
+- it is use o provide the custom name for table
+-jpa annotaion
+
+@Column
+- it is use o provide the custom name for column
+- jpa annotaion
+
+@OneToOne
+- variable level annotaion
+- used map one class with annother class
+- Ex: 1 person has one aadharcrd/ 1 car has one enjeene
+
+@OneToMany
+- variable levl annotation
+- use to map one class with list of obj
+
+@ManyToOne
+- multiple classes releted with one
+- variable level annotation
+
+@ManyToMany
+- many classes map with many classes
+
+@DynamicUpdate
+- it is casslevel annotaion
+- it is use to avoidng the dirty checking while updataing
+- org.hibernate annotaion
+
+@DynamicInsert
+- it is casslevel annotaion
+- it is use to avoidng the dirty checking while inserting
+- org.hibernate annotaion
+
+@Inject
+- instead of autowire we can use inject annotaion 
+- it is java cda annotaion
+- when we use inject for change the name of bean we have to use @named annotaion
+- and the bydefault scope of bean is prototype
+
+@Named
+- in case of inject it is most of efficent way to change the name of bean
+
+@PostConstruct
+- if u want to exicute some code before the creation of bean we can use this annotaion
+- we can use for init()
+
+@PreDistory
+- if u want to exicute some code before the destroy bean then we can use
+- we can use for custome destroy method
+
+@NamedQueries
+- if u want to write multiple Hql queries with name then u can use
+- classlevel annotaion
+
+@Trasient
+- if u don't want to make any filed column in database we can use
+- varible level annotaion
+- jpa annotaion
+
+@Cache
+- class level annotaion
+- org.hibernate annotation
+- here we metion cache concerrency statergies
+like read only ,read write ,transient
+
+@Temporal
+- it is variable level annotation
+- jpa annotaion
+- it is used on java.util.date & java.sql.date
+
+
+@ResponseBody
+- it is use to return object form data as json format
+- instead of view
+- use in syntax of method
+
+@RestController
+- it is combination of controller & responsebody 
+
+@PathVarible
+- it use take value from URL path
+- defining the placeholder in requesthandler
+
+@RequestBody
+- it is use to take a data from ui to backend as object form
+- method parameter level annotaion
+- org.springframework.bind annotaion
+
+@GetMapping
+- it is use retrive data 
+- we can use for post data also but some drawbacks
+-1) it can bookmark
+- 2) we can send data as particuler length
+-3) show in url path
+- by default all requests internally call getmapping
+
+@PostMapping
+- it is use to send data from ui to backend
+- we can send large object data in json,xml,etc
+- it is not visible in  url we can't bookmark
+
+@DelMapping
+- it is use to delete the data
+
+@PutMapping
+- it is used to updating data
+- if u want to update lots of field at the same time then u go
+
+@PatchMapping
+- it is only chane the required fied which u want
+- it is light weight 
+- if u want to update particuler field
+
+@SpringBootApplication
+- it is main class spingbootapplication starts from this class
+- when we create springboot project its springboot provide this class for us
+- it is combination of componenet scan,autoconfiguration,enableautoconfiration
+
+@AutoConfigartion
+@EnbleAutoConfigartion
+
+@Value
+- it is use take value from application properties file in our class 
+and read that on browser
+- we can read spring environment variable using value annotation
+
+@Query
+- if u want to write our custom query without following the predifend keywords
+
+@Data
+- it is a lombok annotaion
+- its combination of setter,getter,tostring
+
+@Setter
+-for providing setter
+- variable level annotaion
+
+@Getter
+-for providing getter
+- variable level annotaion
+
+@ToString
+@NoArgsConstructor
+@RequiredArgsConstructor
+@EqualsAndHashCode
+
+@RequsetPart
+- it use take multi-part form data from ui to backend
+- method parameter level anntaion
+- it create bean for multipart resolver automatically
+- return multipartfile
+
+@Overiide
+- method level annotaion it is use to overerided method
+
+@Native
+- which code we are going to take from the annother language
+- method level annotaion
+
+@EnableSwagger2
+- it is classlevel annotation
+- use to describe api in well format
+- for make app user friendly
+
+how work autowired ?
+- we can accsess private variable using reflection Api
+- first we have load the class using class.forname(class name); -class. newInstance().object - class.getdeclaredFeld(variable name).Filed class.setAccseble(true).field.set(object , value)
+- it breaks the oops concept thats why iits not recommended to use
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Hibernate ?
+- orm
+- use to connect oops app to rdbms
+
+advantages over jdbc ?
+- automatic query genretion
+- reduce boiler plate code
+- independent from database
+- exception handling
+- hql
+
+what is dialect ,hbm2_ddl auto,show_sql ?
+- dialect :which type of query to be genreted internally ,convert datatypes
+- hbm2_ddl: hibernate to data defination language autimaticaly
+- show_sql : show the query on console
+
+what is Driver ?
+- bridge betn database & java app
+4 types of driver
+jdbc_odbc,network,native,thin
+
+sessionfactory ?
+- core interface
+- used to create connection betn java app &database
+- use provide instance of session
+- thread safe
+
+session
+- mediator betn jva app & dbs
+- interface
+- not thread safe
+- provide multiple methods to perform opretions
+
+how can we create instance of session ?
+- getcurrentSession() : if exist return existing else new
+-  openSession() : always return new instance
+- for getcurrentSession :we need to provide one property 
+current session context class
+
+what is annotations ?
+- provide extra information to jvm at runtime
+
+@Entity
+- javax persistance annotation
+- classlevel annotation
+- used to map class with dbs
+
+@Id
+- javax persistance
+- variable level
+- primary key column
+- it is compulsary to provide
+
+@table
+- custom column name
+
+@column
+- custom column name
+
+@genretedvalue
+- javax persistence
+- provide auto_increment constrants
+- id genrete  automatically
+
+difference betn strategey identity ,auto ,sequence ?
+identity : for particuler table sequence maintain
+auto : for all table in same schema
+sequence : custom sequence 
+
+diff btn save() or persist ()
+- both are used to convert object from transient layer to persistance layer
+- save return serializable int
+- persist void
+
+difference betn save() or saveorupdate() ?
+- save used insert new object always
+- saveorupdate : if obj exist it update else insert
+
+diff betn get() or load() ?
+- both methods use to retrive data from dbs
+- get method support eager loading while load method return lazy loading
+- if object is not present in dbs get method return null while load return object not found exception
+- get return eager data while load return proxy data
+- if u sure about data then we go for load
+- don't sure about data then we go for get
+
+what is dirty checking ?
+- unwanted column checking while inserting & updating
+
+how to avoid dirty checking ?
+- @dynamicInsert & @dynamicUpdate 
+- at a classlevel
+- org.hibernate.annotation
+
+
+what is mapping ?
+- providing reltion betn two classes & accouring same reletion in rdbms by using maping annotations
+
+
+@onetoOne
+- one entity associated with one entity 
+Ex : one person has one AadharCard
+
+what is cascading ?
+- if u perform some opretion on target entity it get reflect on child entity
+
+
+types of cascading ?
+all,detach,merge ,persist, remove,refresh
+
+
+what happens if u don't provide no -args con in entity class ?
+- if u try to accsess private data using paramitrized constructor or we go to retrive that using get or load methods
+its get to u instansiation exception becoz get() internally call newInstance() of class class or this method internally call default constructor
+
+
+how hibernate handle the exception throws in jdbc ?
+- convert compile to runtime
+- sql into hql
+
+
+diff hbm2ddl_auto create & update ?
+- create : always create new table & drop exsiting
+- update : update in existed table if not create new
+
+what is caching ?
+- it is an machnism use to pooling the obj
+- copying of objects
+- application perfomance will increase
+
+diff btn 1st level & 2nd level cache ?
+- first level : on by default - session level- clear evict(),clear()
+- secondlvel : have to use vendors echcache - sessionfactory level - cache.evict(),evictAll()
+
+diff betn clear() & evict() ?
+- clear : remove all the cahe in session
+- evict() : particuler object cache remove
+
+annotations of cache & concerrency statergy ?
+- @cache
+readonly ,readwrite ,Transitional : not support echcache
+
+vendors for second level cache ?
+- echcache
+- jboss
+
+wat is Hql ?
+- hibernate query lang
+- independent from database
+- work on class & variables
+- extention of sql
+
+why we use hql ?
+- to perform complex query queries like ,on ,and ><
+
+diff betn Sql & Hql ?
+- sql :structor query lang where hql :hibernate query lang
+- sql use for only mysql hql support every dbs through hbm
+- sql work on filed or table hql work on class & variables
+ 
+
+what is lazy loading ?
+- load the child obj on demand
+fetch tyoes
+eager : fetch associated details without calling it
+lazy :fetch object when it required
+
+onetoone : eager 
+oneTomany : lazy 
+ManytoOne : eager 
+manyToMany : lazy
+
+singletable Strategy
+- in case of inheritance the parent or child data stord in one bucket it make one extra column @decrimantor
+
+table per strategy
+- in case of inheritance  the parent or child objcet for create class per table
+
+what is pegination ?
+- restring data from fetching
+- setMaxResult()
+- setFetchSize()
+
+Sql injection attack ?
+- when we use hibernate predifend methods their is chance to data breaking
+
+can we make entity class final ?
+- no we can't
+- hiber inherit the  intity to get his properties
+
+
+states of obj in hibernate ?
+- transient : when we create obj it independent from db or not present in db
+- persistent : save ,update ,saveorupdate,persist
+clear ,evict,evictAll,close ,detach
+- detach :merge ,save ,saveorupdate,
+
+
+why we use namedQuery ?
+- hql code decrease the code redability 
+- increase the boiler plate code
+- for code reusability
+- thats why we use @namedQuery at class level 
+
+
+why we use @namedNativeQuery
+- for writing the native code
+- insead of hql
+
+why we use critaria ?
+
+
+immutable class ?
+Use @Entity (mutable=false) or @Immutable annotations to tell Hibernate that a specific entity is immutable.
+
+
+mapping : one class map with another class
+types of associations :
+onetoone
+- one entity associated with another one entity 
+- eager loading
+onetomany 
+- one entity associated with another multile entities:
+- lazy loading
+manytoone 
+- many entity associated with one entity:
+- eager loading
+manytomany
+- multiple entities associated with one entity Ex:customer & product 
+
+@Inheritanse
+- classlevel
+- in is a reletion
+
+
+hql disadvantages ?
+- decrese the redability of code
+- we have to write same type of queries multiple times
+- avoding manual error
+- app hevey increse the time complexity
+
+advantages of named query ?
+- precompiled query
+- increse the performance
+- avoding mannual error reduce boiler plate code
+
+
+@namedqueries()
+- classlevel
+- for multiple queries
+
+@namedquery(query,name)
+- classlevel
+- single query
+
+criateria API(application programming interface)
+- independed from quries
+- fully support object orianted programming
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Advantages of springFrameWork ?
+- to built secure  web application
+- lossly coupled app
+- lightweight
+- provide modurality
+
+what are the transaction Manegement support in spring ?
+- 1) programatic : should be use for few transaction opretions
+- 2) declaretive : Many transaction manegement
+
+disadvantages of object creation ?
+- supports tite coupling
+- if we make ur class abstract u can't make object in another class
+- if u make paramitrzed constructor we have to provide value compulsary
+
+Ioc ?
+- core model
+- inversion of control control of object creating from the user given it to container at runtime
+- supports loose couling
+- dependency injection framework
+
+what is bean ?
+- nothng but object 
+- which created and maneged by containers
+
+what is cotainers?
+- read the xml file
+- create the bean 
+- maintain the lifecycle of bean
+- destroyed the bean when its needed
+
+beanfactory ?
+- it is an interface
+- core container
+- can't use with annotations
+- lazy loading
+-  can't read xml file directly have to provide resourse (interface) child class classpathresurse(xml file name)
+- we use child class xmlbeanfactory (resourse) -> (it is depricataed)  for beanfactory
+
+depricated means ?
+- replacement available
+- it can throw the warnabilities
+- we can use still
+
+ApplicationContext?
+- interface
+- classpathxmlApplicationcontext
+- j2ee container
+- can read directly xml file
+- it is new concept
+- internally call beanfactory
+- can use with annotations new concept
+- support eager loading
+
+submodels of IOC?
+- core ,bean,context,expression
+
+
+Injection ?
+- pass value to variable at runtime
+
+Three types of injection ?
+1)property base injection / setter base 
+- property tag
+- insertion order not preserve
+- partial insertion allowed
+-  have to provide setter in entity class
+- override constructor base values
+
+2) constructor base injection
+- use constructor-arg  tag
+- partial insertion not allowed
+- insertion order preserve
+- can't override setter base values
+- have to provide paramiterized constructor
+- if u don't want to follow the sequence u can use index attribute
+
+3) field injection
+- useing reflection api
+- we can autowired private variable also
+
+can we  create bean of private constructor ?
+- feature of spring 
+- spring internally uses  newinstance method of class class
+it internlly calls default constructor
+
+
+when we get the beanInstansiationException ?
+- if u provide the setter getter & paramitrized constructor in intity class and u don't provide value in constructor its 
+and u run this code get to u beanInstansiationexception
+
+- we can't make bean of abstract class
+
+- for read the xml file java has saxparsers its included in application context internally call sax parsers
+
+- if we pass any value in constructor its internally consider String 
+
+alternative of spring ?
+- ejb (enterprice java bean)technology
+- servlet jsp - framework
+
+spring ?
+- framework of framework
+- modular framework 
+- interface 21
+- used to make web application & distrubuted application
+
+models of spring ?
+- IOC(inversion of control)
+- Aop (aspect orianted programming)
+- Mvc(model view controller)
+- Dao (database object api)
+- Test
+-  messing 
+- instrumentation
+
+modification in models ?
+- 1) 7 models
+- 2) 6 models(web+web mvc)
+- 3) annotaions introduce
+- 4) modification anntaion( messing model introduce)
+- 5) baseline set -tomcat 5.0,catlina support ,java 1.7,mysql 5.0 ,hbm5.0
+
+dependency injection ?
+- injecting one bean to another bean at a runtime 
+- for injecting bean we use ref instead of value
+
+ scope ?
+- how many object to be created for single bean
+- by default scope is singleton
+
+two types of scope in IOC
+1)singleton
+2)prototype
+
+scope in MVC?
+- 1)singleton
+- 2)prototype
+- 3)request - http request
+- 4)global -session :for portlate context
+- 5)session - http sesssion
+
+when we use lookup method ?
+- if the scope of bean is singleton it does't consider its chid bean scope if u want to make sure its consider its child bean scope
+- its only use can setter base injection
+- we have to provide getter method
+- it is give just instrumentaion to read the bean
+
+ wiring ?
+- connecting one bean to another bean
+
+autowiring ?
+- connecting one bean to another bean automatic
+
+why we use autowiring ?
+- if the one xml file has multiple bean of same class it is not possible to find that perticular bean which u want
+- its increase the complexity
+ 
+limitations of autowirng ?
+- can't primitive datatype
+- String
+
+types of autowiring ?
+1)bytype
+- its check the datatypewise
+- if their multiple bean of same type its get ambiguity thats why we have to go for byname
+
+2)byname
+- we have to provide variable name and bean name same
+
+3)constructor 
+- if your injection is constructor base 
+- its first check bytype and their is multiple bean then its  go iternally byname
+
+
+4) autodetect
+- after 3.0 its deprecated
+- internally call constructor
+- its get ambigutiy
+
+bydefault autowiring its no
+
+
+- if u want to use annotations in ioc u have to provide Aop jar
+
+- if u want make bean without xml we have to make our class
+on that @configuration  its child of @component
+- in that class methods which has @bean annotaion and return the object of your entity class
+
+- if u want to read our class we use AnnotationconfigApplicationContext  child of applicationContext
+
+- if our xml file is anywere in our desktop we use filepathxmlApplicationContext
+
+- method name work as id
+if u want to change we can provide @bean( name=" any name if u ant")
+
+@scope
+- we can provide value attribute
+- if u want to change the scope of bean 
+- methd level annotation
+- org.springFramework.context.annotation
+
+
+@Autowired
+- variable level annotation
+- org.springframework.beans.factory .annotation.autowired
+- first its goes bytype & automatically goes byname
+- instead of autowired u can use @inject annotation
+
+@qulifier
+- variable level annotation
+- when u go for byname its most efficient way to change the name of bean
+- org.springFramework.context.annotation.qulifier
+
+Spring bean Lifecycle ?
+- 1) instansiation : create object 
+- 2) Populate properties : injection- set the values
+- 3) beanNameAware -interface -setbeanName() : unique name aware to bean
+- 4)beanfactory | applicationcontext : - bean can understand he belongs to which container
+- 5) postconstruct properties
+- 6) init() : if u want to exicute some code before the creation of bean
+-  then bean is ready to use
+- 7) destroy() : if u want to exicute some code before the creation of bean 
+
+
+difference beween springbean lifecycle and servlet bean lifecycle ?
+- 1) instansiation
+- 2)init()
+- 3) postconstruct properties
+
+custom init() ? && destroy() ?
+1)- declare in xml
+
+2)- initializingBean(interface) - afterPropertiesSet() - init()
+- disposalBean(intrface) - destroy() - distroy()
+
+3)- @postConstruct
+ - @predestroy
+----------------------------------------------------------------------------------------------------------------------------------------------------
+MVC : Model view Controller
+- model of spring
+
+how to make project
+- jdk  1.8
+- eclips 1912
+- dynamic web project
+- next - next - genrete web xml /deployment descripter 
+- web content = pages
+- web inf - web-xml
+
+- predifine default pages in web.xml
+- first page name of our applicaton
+- we configure the servlet here 
+
+why jsp ?
+- as viewing technology we use jsp bcoz we can write html,css,java
+
+
+how to create server ?
+- install tomcat 1.8 - path - server - on select 1.8 version 
+- configure server for application - built path - configure built path - runtime - apache tomcat 
+
+
+- we use apache bcoz spring/boot supports
+
+- if u want send any request from website to your server it should http request thats why we have to make form & action
+
+- spring jars paste on lib folder
+
+dispatcher servlet ?
+- spring predifine class
+- front controller its only one
+- its take all dependecies & requestes from server
+
+- before annotation we used to use simpleformatcontroller & abstractCommandController
+for our custom controller class
+
+@controller 
+- streotype annotaion
+- used to define layer
+- u don't need to create bean for that class containers makes bean for them automatically
+
+servlet configuration ?
+- webxml
+- servlet name - servlet class 
+- servlet mapping = servlet name - url pattern
+
+
+what is web.xml / deployment discreapter
+- use to store front page of application
+- use for servlet configuration
+- its automatically provide
+
+naming convention of servlet.xml ?
+- servlet name-servlet.xml
+- xsd need for tags opening
+- context component scan - basepackage = use to scan the packages for find the streotype annotaion classes
+becoz containers make bean for them
+
+@requestmapping / url handler
+- has been provided 3.0 v
+- depricated from 4.0 v
+- bind the request with our controller method
+- org.springFramework. web.bind annotaion
+
+How many controlles we can create ?
+- we can make multiple controlles 
+- but one request should only one handler
+
+- we don't need to dispather servlet to go one page to another page bcoz their not generete ant request
+
+@Requestparam
+- it is use take query paramiter data from url / ui to backend
+- method parameter level annotaion
+- org.springframework.web.bind annotaion
+
+@Modelattribute
+- it is use take objecct form data from ui to backend
+- method parameter level annnotation
+- org.springframework.web.mind.annotation
+
+@Test
+@Crossjoin
+@controllerAdvice
+@ExceptionHnadler
+@RestControllerAdvice
+@joinColumn
+
+
+- when u return any page from url handler it can't understand the viewing technology
+thats why its get error to u
+- if u want return view we have to go for InteresorseViewResolver
+it have one property which suffix
+- we provide thier suffix of our page
+
+- first we have to create bean of internalResourseViewResolver
+in servlet file
+
+
+three view resolver
+1) internalresourseViewResolver
+2) urlbaseViewResolver
+3) xmlresourseViewResolver
+
+we use internalresouseviewresolver becoz
+- is provide more functionality than other two
+
+- if u want to send some data with response from backend to ui
+we can use Model Interface as a method parameter level it have
+addattribute( "custom name of object",object name); it is called model & view(key&value)
+internally uses map
+
+Aop ?
+- use to provide modularity to our application
+- modularity means sepreted in that way if we combine its get to u one application
+
+
+database connectivity ?
+- create bean of driverManegerDataSourse
+Prperties
+- DriverClassName ,Url ,UserName ,Password
+
+SessionFactory configuration ?
+- bean create localsessionFactory
+- dataSourse
+- dialect ,show_Sql , hbm2ddl
+- packeges2Scan - packageName of modelClasses
+
+
+why need layers ?
+- its good to find the error
+
+
+layer ?
+@controller : handle the requests
+Services : businessLogic
+Repositry : database connectivity / Dao layer 
+Dao layer : used to intract with the database 
+these all streotype annotations
+
+- if u want to write java code on jsp page we have to use scriplettag
+- if u want to get  data from backend on view /ui we have to use Request.getattribute(object name).object ,thats why we have to typeCast
+- if we write = we don't need to add semicolon
+
+
+FileHandling ?
+if u want to send fileformatdata from ui to backend 
+
+how ?
+- we want to add  file with your object  u have keep datatype byte[] and @lob annotation
+bytee array becoz : it is use to map the memory
+
+@Lob
+- javax persistence annotation
+- variable level
+- most of the byte[] for file handling
+
+- it is nessesary to tell it is a multipart /form-data
+- it is post method / otherwise we can use postmapping to handle file 
+- u have to take data as query parameter  @requestparam compulsary to file handling and fileuploading
+- for file handling u have to use MultipartResolver : it convert file into pieses we can say in bytes
+- have to make bean provide id =multiPartResolver :internally goes byname
+- MultiPartFile variable method parameter
+- have to add 2 jars 1)commens Io 2)fileUpload
+- we have to convert multipartformdata in bytes u have to use MultiPartFile.getbytes();it throws  io exception  have to handle otherwise we can throws
+
+there are two
+1) commensMultipartResolver
+- it is use for maven project
+
+2) StandardservletMultiPartResolver
+- introduce in 3.0v
+- it is part of API
+
+
+DateHandling ?
+- we can Date interface from java.util or Date from java.sql
+- java.sql - just for current date
+- java .util - current date and current time also
+- we can @temporial annotation use for just java.util.Date
+
+- have to make date object and set that with object
+
+
+what the difference between transient keyword and transient annotation ?
+- @transient
+- variable level
+- javax persistence
+- it is use when u dont want to make column of any field
+transient : it is use if u don't want to make any field serialize
+
+- if u want to redirect (two handler for 1 request)your request 
+- one class as parameter of metod  redirectAttributes and return redirect:/name of request
+- if u want to send model with redirectrequest we have to use redirectAttributes.AddflashAttribute()
+ 
+============================================
+JAVA BASE
+web.xml ?
+- have to make one class
+- implements webapplicationInitilizer interface. onstartup(): it is use to start some services when we start app
+- container : AnnotationConfigWebApplicationContext .register(servlet class);
+
+servlet.xml
+- make one class - @configuration annotaion & componentScan(value="basepackage") &@EnableWebMvc : it is use to enable the web.xml for configure: make bean in this class
+
+- for default page we have to make one method @requestmapping & action = "/" in controller
+
+- spring only takes dependencies of JDK and servlet thats why we can make object using new keyword
+------------------------------------------------------------------------------------------------------------------------------------------------
+maven
+- project building tool
+- makes by tata for jakarta project 
+
+advantages
+- provide specific structure
+- independent from jars
+- version maintain
+- we can make  built the project
+ jar : collection of .class file or 
+ war : for web application : if u want to deploy app
+- it s only for java
+- we can make any  type of project like jdbc , hibernate
+
+- if u want to make mo app using java then u go for gradle
+
+structure ?
+groupid: type
+ArtifactId : tempraryName
+snipit : versions of jar
+
+pom.xml
+- project object model
+- add depencies its automatically download for us
+
+- if u create built it store in target folder
+
+- take a dependencies on MVN repositry central repositry
+- if u make maven project it create on folder in your system .m2 folder
+ it is ur localRepositry : here all your jars store
+
+how to find location of our project ?
+- right click - properties - resourse - browser - targetFolder : built
+
+--------------------------------------------------------------------------------------------------
+SpringBoot
+- it is an approach 
+- advance version of Spring
+- whatever app we can make in mvc that all app we can make in springboot
+
+Advantages 
+- AutoConfiguration
+- reduce boiler plate code 
+- starter dependencies 
+- embeded server tomcat
+- version maintain
+
+how to create springBoot project
+- spring IO initializer
+- sts : (spring tool suite) internally call IO website
+
+Starter ?
+- feature of springBoot
+- onclick we can add some dependencies
+- when our application start it provide some services
+- we don't need maintain the version for that
+
+- devtool starter : for restart the application  automatically when we save the projectt:
+- spring web : spring jars
+
+cotlin : spring fifth version cotlin support
+
+- when we create jar packeging while creating poject it make one class which has springBootApplication annotaion & main() & run method in that
+- main folder : our java classes
+- resourse folder : images ,pages load
+- test : for provide test cases ,mocito ,junit  testing purpose
+
+- default port of tomcat is = 8080
+
+- effective pom : maintain the varsion of  dependecies
+
+- for http request the port of tomcat is = 8080 : hyper text transport protocall
+- https : tomcat port = 8443 : sequre
+
+- SpringBootApplication : combination of autoconfiguration,enableautoConfiguration ,component-scan
+
+Work of Run Method :
+-  start the stopwatch
+-  prepare environment
+- Loads the listeners : it is responsible to create your application context - its bind our app context with servlet lifecycle
+- print the banner
+-  load the application context : create bean - internally create 132 bean
+
+resourse : application proerties : we can write here all properties key and value pair if u want 
+- u can change port : server.port = port number
+
+- we add pages on webapp
+- for knows the application what is the viewing technology have to add one property which is : spring.mvc.view.suffix =.jsp
+
+- when u hit the url page getting directly download becoz tomcat can't render the jsp page on browser it support themeleaftechnology
+thats why we have to add embded jasper starter dependecy
+
+
+jpa : it is a java persistence API : it provide some rules & regulation to create a orm tool 
+- hibernate is implemention of datajpa
+
+data jpa : 
+- use to connect springbootapplication with database
+- starter dependency 
+- u don't need to add hibernate dependencies but u can add
+- we have to add mysqlConnector
+- if u add data jpa u have to configure datasourse & hibrnate properties compulsary
+- have to built the sessionFactory for that have to add some properties
+
+spring.datasourse.driverClassName =com.mysql.jdbc.Driver
+spring.datasourse.url =jdbc:mysql://localhost:3306/schema name
+spring.dataSourse.username 
+spring.datasourse.password
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.ddl.auto = update
+spring.jpa.show_sql = true
+
+
+How to add external server ?
+- take a other server dependencies & add in pom.xml
+- exclude the embded tomcat in starter web dependency
+- we have to remove embded jasper dependency also
+
+
+tomcat ?
+- apache
+- slower than jetty
+- springboot support by default
+
+jetty ?
+- more for microservices
+- made by eclips 
+- faster than tomcat
+
+how to read any property from property file ?
+- if u want read any custom property from properties file to your application 
+then u can use @value( name="${property name}") annotation on String datatype: variable level
+- all properties application.properties in compulsary in String format
+- if u want to send that property on view u can use Model.addattribute()
+- on view u can take that value using request.getAttribute()
+
+
+profiling ?
+- providing multiple properties file for different different environment
+- if u want to change enironment it is not possible to change all properties everey time
+- u can change port also 
+- u have to active that properties file we use 
+Spring.profiles.active = property file name
+first call the main properties file but it override it becoz properties are key & value pair
+we comment out in property using #
+
+How to print our own banner ?
+
+what is actuator ?
+- it is a feature of springboot
+- it is a subprogram 
+- use to monitor the appliation , basically use to check the environment ,bean ,healt
+- it may be run on same port or may run on different port : manegement.server.port =port num
+- for use we have to add actuator starter dependency
+- it has 13 enpoints 
+- when we add we can accsee only one endpoint which is health
+- if u want accsess all the endpoint we can add one property which is 
+manegement.enpoints.web.exposure.include = point names
+- we can exclude some enpoints also
+
+need actuare ?
+- we can see logor on console but its not accesseble for all
+
+- instead of String we can pass ModelAndView we can return modelAndView value & httpsttatus.OK
+
+How to built the war file ?
+- when we create war it create in target folder by default & .m2 folder
+- first goal of maven : maven clean - clean install
+
+How to built war on cmd ?
+- install mvn - extract all - open bean folder - copy path - set in environment variable
+- go still target folder - open cmd - mvn clean install
+
+How to run war on external server ?
+- copy the war 
+- paste in webapp folder
+- come back still bean
+- open cmd
+- catlina -bat run
+
+how to run application on cmd ?
+- embded tomcat
+- go still war file 
+- open cmd - java -jar name of jar
+
+ Advantages Spring boot data jpa 
+- feature of springBoot
+- it is abstract layer over jpa
+- internally it call hibernate
+- we can use direct methods
+- we don't need to maintain the transaction
+- transaction will be maneged by springboot only
+- we don't need to provide implemented class if u want we can use @postconstruct annotation
+
+CrudRepositry ?
+- it is extend to marker interface  which is Repositry thats why we don't need to write repositry annotation
+- it take two parameter 1) entity class name ,Integer
+- we can perform all crud opretion
+- it has 12 methods like findbyid(),save(),findAllbyid(),findAll()
+
+disadvantages of crudrepositry ?
+- we can fire only crud opration
+- we can't use opretors
+- queries like ,group by,order by ,greater than
+
+datajpa over jdbc?
+- we need to write query by using jdbc
+- we need to open the statement
+- and exicute the statement
+- and close the connection
+
+Hibernate over jpa ?
+- we can't store multiple objects at a time
+- we need to open the session
+- we have to maintain the transaction after dml commonds
+
+- save method  work as update called upsert method
+
+- when we use crudrepositry or jparepositry we don't provide implemented class becoz it internally uses proxy design patteren
+
+- we use singlton ,prototype ,dao,aop,proxy design patteren
+
+- run method return configurableApplicationContext
+
+Jpa repositry ?
+- it extend  peginationSorting &querybyexample & peginationSorting extend crudrpositry
+- using we can create custom query following naming convention of keywords
+- it internally call crudrepositry
+- we can write hql & jpql query  using @query annotation on method level
+- u are independend from your query language
+- we can sort details also
+--------------------------------------------------------------------------------------------------------------------------------------
+http : hyper text transper protocall : faster
+https : sequre -slower than http
+
+HttpStatusCode ?
+- it is use to debug a network problem web problem
+- use to make user vfriendly app
+- this divded in five classes
+
+100 =  information / continue
+101 = processing
+
+200 =  ok
+201 = created
+202 = accepted
+204 = no content
+
+300 =  redirectional
+
+400 =  clint error / bad request
+401 = unauthrized
+402 = payment required
+403 = forbidden
+404 = not found
+405 = method not allowed
+408 = request timeout
+
+500 =  server error  / internal server error
+501 = not implemented
+502 = bad getway
+503 = service invalid
+504 = getWay timeout
+505 = httpversion not support
+
+lombok ?
+- it is use to avoid boiler plate code
+- we can use anywhere it is not springBoot feature
+- thats why we have to download & set the path of sts
+- it has annotations like @setter ,@getter ,@tostring, @hascode ,@equls
+- @data : it is combination of setter & getter & toString
+
+- instead of application-properties file we can use yaml file (yet another markup language)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ - http it is use to comminicute with server
+ - clint send arequest it will be comminicate with server
+
+- when our jsp pages prsent in our app then we use @modelAttribute
+--------------------------------------------------------
+package com;
+
+
+--------------------------------------
+2. What is ResultSet?
+10. What is Rowset?
+1. What are the different types of JDBC drivers in Java? Explain each with an example.
+ What are difference between ResultSet and RowSet?
+3. Explain the types of ResultSet.
+8. What is DataSource in JDBC? What are its benefits?
+12. What is meant by a locking system in JDBC?
+what is meant try with resourse?
+can we store static final field in db ?
+can we make array  size o ?
+if u want wrie any abstract method in class without abstract class ?
+
+1.  Frontend Component Creation.
+2.  Spring boot backend done.
+3.  Configuration of static database.
+4.  Providing Hibernate mapping in CustomerData and Role.
+5.  Registarion of customer.
+6.  Send SMTP mail for Successfully registeration.
+7.  Assign Role To perticular customer(By Admin).
+8.  Send SMTP mail for Role Assign for providing login on portal.
+
+Swagger json url
+http://localhost:9000/v2/api-docs
+==========================================
+
+reactive app
+- comminicate with only the server
+what is api versioning ?
+how u use oops in your project ?
+what is sceduler and interceptor ?
+---------------------------------------
+Here List of Some Interview Questions which asked during recent interviews
+
+1) Write a MySQl query to find fifth hihghest salary?
+2) What is Index in MySQl?
+3) Describe thread Locale variable class and its Implementaion?
+4) Use of @PostConstruct annotation and give implemanted example?
+5) What are different collections supported in JPA?
+6) What is Composite key in hibernate?
+7) Use of Volatile and transient keyword?
+8) Can we create a instance of abstract class?
+9) What is Singleton design pattern & give implementation of it?
+10) Can we ovverride static method ? if not then why?
+11) In abstract class what is the use of Constructor?
+12) How to write stored procedure in MySQl?
+13) Differece between @SpringBootApplication and @EnableAutoConfiguraion annotaion?
+14) What is actuators in Spring Boot ? How to generate Custom Actuators?
+15) Can we switch from one Database to another Database in SpringBoot?
+16) Use of @NamedQuery annotaion?
+17) What are the types of cascade in hibernate? Explain Remove and Datached type?
+18) What are the types of Scope?
+19) Can we declare parent class as private Class?
+20) What happen when we declare class as a Protected?
+21) Use of @Join Column & mapped by in hibernate?
+22) If i want a data from database in a desceding order of an Id using JPA repository.
+    Give Implementation for it?
+23) Explain Concurrent hashmap?
+24) What are the advantages of SpringBoot over Spring?
+25) Explain Step by Step creation of project in SpringBoot?
+26) Difference between Arraylist and linkedList?
+27) Can we change tomcat server in Spring? If yes then how? & if No then why?
+28) How we can restrict to use Configuration file?
+29) Differnece in @Autowired and @Qualifier?
+30) Difference in @RestController and @Controller?
+31) Difference in @Requestmapping and @GetMapping annotaion? 
+32) write a code to find duplicate String count using Stream API?
+33) Write a code to find the names from list whose name start with 'S' using stream API?
+34) If same hashcode generate during the time of hashing then how many bucket used?
+35) Write a code for service layer , Dao layer, Controller?
+36) Write a programe to reverse a String? 
+37) input(2,4,6,8) and ouput(4,16,36,64) without using for loop?
+38) Explain your project and Explain a code to fetch particular data from whole from database?
+39) What is mean by mapping hibernate?
+40) What is mean by design pattern?
+41) How to call store procedure from Spring boot application?
+42) What are all preconditions to use "Group by" in MySQl?
+43) Can be the two objects of immutable class are same or not?
+44) How to create custom annotation in java?
+45) Find out the salary from the employee list whose salary greater than 1,00,000 using stream API?
+46) Find out the first occurence of string from the list of string using stream API?
+47) Consider a employee class in which a field id, name, gender, salary find out the male and female employee count?
+48) Write a SQl query tp find out the duplicate element from table?
+49) Write a query to find out the second maximum salary from table?
+50) Difference between immutable and encapsulated class?
+51) Find out the occurence of duplicate String from array?
+52) hashcode of long datatype ?
+53) how to sort multiple field using comparable ?
+54)difference betn  autowired and ioc dependency injection ?
+ 55)how can u define oops concept in project ?
+56)program complexity how to check ?
+57)
+------------------------------------------------
+relevent experience 
+ how to rate u core java? = 6 -7
+string ? array ? logicle 
+- execution ke liye "interpeter" use 
+commond=javax
+website for theroticle questions "instanceofjava" name
+---------------------------------------------
+proposal : why we use
+- avoding the criticle issus about housing rights and ensure dignity of shelter for all the indiviusals
+- this project is created for handling the workflow ,customer inqueries and reduce the response and increase the customer satisfaction
+- assist the asmissin process for new members in family
+- Maintain accurate records of the new society’s information
+
+objective: drawback of ur previous project
+- the goal of this pproject efficiently manege all the funtions within the society
+- create a sustainable socity that provides safe afortable homes
+- provide a  administrative needs releted incorporeting new socity in our existing housing society project
+
+ description: wht u use in 
+- 
+role 
+- Admins have primary control over the system.
+- Admins can add, remove, or update details related to flat owners, registration, and billing.
+
+feature
+Registration and Authentication:
+- Flat owners register using their details (name, contact, address, flat number).
+- Admins confirm or cancel registration requests.
+
+technology Stack ?
+- frontend : angular
+ backend :
+- springboot
+- JDBC API for database connectivity.
+- MySQL database for data storage.
+
+ what is ?Explain project arichitecture ?
+how to fetch duplicate record from particuler table ?
+- SELECT price, COUNT(*)as count
+FROM product
+GROUP BY price
+HAVING count > 1
+
+data integretion?
+- about data inforatio like retrive ,store
+-----------------------------------------------------------
+how can u define oops concept in project ?
+- springboot internally creates bean called abstraction
+- we create object called
+- inheritance in case of interface and serviceimple
+- 
+- what is meant by oops
+- four pillers of oops
+- inheritance : using interfaces
+- i reused the code ,interface
+
+
+headers ?
+- used to provide extra information about request
+
+select max(price) as third_price from product  p where 2=(select count(distinct price)from product p1 where p.price < p1.price);
+------------------------
+Developed the code as per the requirement. Deploy the code on servers using putty. Provide IVVT support during testing on the story Requirement Analysis & Finding Optimized Solution. Responsible for coding as a designer and provided a design document. GIT Code Management JIRA for creating sub-task for given story work and updating on daily basis.
+
+paradiam checking websiteb hain for project info
+
+swagger : provide documentaion of api
+- use to describe the api
+- http://localhost:9000/v2/api-docs=json url
+-http://localhost:9000/swagger-ui.html=documentaion of html
+versions for swagger 2.7.0 both dependencies
+
+microservices
+kafka , ureka ,apigetway,
+
+program complexity how to check ?
+- space complexity every time when u declare it is a o(1)
+
+what is meant by appenders :
+where u want to print loggers
+----------------------
+Q1. Explain your project (mine is App First )
+     Answer:-
+ -I am currently working in a Smart ebanking Hub Project.
+-It is a Banking Domain Project.
+-We have a team of 5 members in this project.
+
+  -Purpose: 
+  The Smart ebanking Hub project is aimed at revolutionizing the banking experience by introducing a secure, user-friendly, and technologically advanced online banking platform. 
+- Our primary goal is to enhance financial accessibility, simplify transactions, and contribute to the ongoing digital transformation within the banking sector.
+
+-Technology used :
+	    We employed a comprehensive tech stack for the project, including Java for backend development, Spring Boot for streamlined development, Hibernate for efficient database management, and MySQL as our relational database. Maven facilitated project build automation, Log4j for logging, Junit for testing, Jenkins for continuous integration, JIRA for project management, GIT for version control, and Postman for API testing.
+			
+- Role :
+          In this project I am working as a Java Backend Developer & My role are 
+- Responsible for coding & developing using Core Java, Springboot, Angular.
+- Writing hibernate mapping files & maintain the database.
+- Creating all entity classes & creating their DTO objects for getting required fields in the
+ objects to implement business logic.
+- Monitored performance & optimized SQL queries for maximum efficiency.             
+              -Utilized Apache Tomcat Web Server to deploy and manage applications.	
+              -& also Created Web UI pages using HTML and Angular.
+			  
+Q2. Explain SQL functions and procedures ?
+     Answer : -
+        -SQL functions: SQL functions are programs that database management software runs across a database to perform operations on data or database objects. 
+	     They can be classified as data definition language (DDL), data manipulation language (DML), or data query language (DQL) functions.	
+
+        -SQL Procedures: SQL procedures are user-defined database objects that contain a set of SQL statements that perform a specific task.  
+		 Some common SQL procedure operations are Data manipulation,Data retrieval & Business Logic.
+
+                     - Data manipulation Procedures can be used to insert, update, or delete data in a table.
+                     - Data retrieval Procedures can be used to retrieve data from one or more tables.
+                     - Business logic Procedures can be used to implement complex business logic that involves multiple database operations.	 
+
+Q3.The limitations of GET method are :-
+
+   i)Limited data size: GET requests have a limit on the amount of data that can be sent in the URL, typically around 2048 characters, depending on the server and client configurations.
+   ii)Data visibility:  The data sent in a GET request is visible in the URL, which can expose sensitive information and make it vulnerable to interception.
+  iii)Data modification: GET requests should not change the server state, as they are designed to retrieve data only. Using GET for data modification can lead to unexpected behavior and security vulnerabilities.
+   iv)Caching:           GET requests can be cached by browsers and intermediary servers, which might lead to stale data being served or data inconsistency issues.
+   
+Q4.What problems you have faced in these years as a software engineer ?
+    Answer :-
+	   As a software engineer, I have tackled challenges like 
+	   - dealing with complex code, 
+	   - handling external software dependencies,
+	   - making sure our systems can handle growth, 
+	   - improving performance, 
+	   - ensuring security thorough testing, 
+	   - keeping good documentation, 
+	   - effective communication within teams, 
+	   - staying updated with new technologies, and 
+	   - managing time wisely to meet project deadlines.
+	   
+Q5.What is your role in your project ?
+    Answer:-
+	 In this project I am working as a Java Backend Developer & My role are 
+              -Responsible for coding & developing using Core Java, Springboot, Angular.
+              -Writing hibernate mapping files & maintain the database.
+              -Creating all entity classes & creating their DTO objects for getting required fields in the
+                objects to implement business logic.
+              -Monitored performance & optimized SQL queries for maximum efficiency.             
+              -Utilized Apache Tomcat Web Server to deploy and manage applications.	
+              -& also Created Web UI pages using HTML and Angular.
+
+---------------
+Project based questions : ->
+1. Explain you last currently working project ?
+   Ans.--> i.Propasal or Objective or Descriptions. 
+          ii.Which technology used in application.
+		  Tech Stack : -> FrontEnd Tech(Angular/React), BackeEnd Tech(Spring Boot), DataBase(MySQL/Oracle),
+                          Core Java, Collection Framework(List,Map,Set),
+						  Java 8(Stream API,Exaception Handling,Null pointer Check,Seaching,Sorting,Desc,Asec,Comparing,Conversions Array to List, List To Set etc.),		  
+   1.Bank Application --> Requirement Analysis Or Gathering.
+   2.Housing Society --> Requirement Analysis Or Gathering.
+ 
+2. Explain your Project Architecture ?
+   Ans.-->Information collecting about only term of Project Architecture.
+   
+3. Have you deployed your project or konwledge about deployment?
+   Ans.-->i. First Locally Deployment(Eclipse/STS).
+             Q1. Can you change your server.(Jetty).
+         ii. Deployment on Dedicated Server(Given by Company). 
+--------------
+1.Exaplain your project?
+I have worked on web based project online banking system which was designed and developed for
+private sector banks.
+It is a online Banking System for customer. It keeps track of customer's bank account.
+All the banking work is done online in the system like creating account, deposit and withdraw of money,checking
+bank balance and it also provides statement of transactions.
+Due to  which customer not need to go bank for every banking work. All the necessary 
+functionalities are provided in the system, by which customer can do all his bank related work
+from home and can save his time.
+The project modules are differentiated between bank admin and customer.
+bank admin can add bank details , add bank employee  details  etc and can keep record of every module
+in the system
+whereas customer can create his account in the bank, can log in to the system using login credentials provided
+can perform his banking tasks like depositing money, withdrawl of money etc.
+
+2. limitations of GET?
+GET method is used only to retrieve data.
+If we use GET method , the data is get appended to url which is visible to everyone and is not
+secure . 
+so, GET method cannot be used to pass sensitive information like username and password.
+GET method can't be used to send word documents and images.
+
+3 sql functions and procedures.
+functions :
+functions is used to calculate result using given inputs.
+whenever a function is called it get compiled before calling.
+DML statement can not be executed within the functions.
+
+Procedure:
+procedure is used to perform certain task in order.
+procedure is Compiled only once can be called everytime without compiling.
+DML statements can be executed within a function.
+ 
+5 What is role in your project
+involved in development of bug free application and accomplish objectives within deadlines.
+Responsible for coding and developing using spring,jsp
+Designed controller, dao, service repository classes.
+maintained database.
